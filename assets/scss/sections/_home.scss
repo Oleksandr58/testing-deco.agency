@@ -1,0 +1,203 @@
+.section-top {
+    background-color: $bgcolor;
+    padding: 50px 65px 65px 125px;
+    min-height: 100vh;
+    overflow: hidden;
+    
+    .btn {
+        &-primary {
+            padding-left: 65px;
+            margin-top: 65px;
+
+            &:hover {
+                .svg {
+                    animation: fall 1.5s infinite;
+                }
+            }
+        }
+
+        &-secondary {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &:hover {
+                .svg-play {
+                    animation: dasharray 2s 2 alternate;                    
+                }
+            }
+        }
+    }
+
+    .wrap-svg {
+        height: 30px;
+        width: 30px;        
+        position: absolute;
+        top: 50%;
+        transform: translate(-45px, -50%);        
+        border: $textbtncolor solid 2px;
+        border-radius: 50%;   
+        overflow: hidden;
+    }
+}
+
+.entry-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .wrap-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        img {
+            width: 100% !important;
+        }
+    }
+
+    .nav {
+        display: flex;
+        padding: 0 130px;
+        width: 580px;
+        justify-content: space-between;    
+        align-content: center;
+
+        &-item {
+            text-transform: uppercase;
+            font-style: $fontMedium;
+            font-size: 12px;
+            cursor: pointer;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                width: 0;
+                height: 2px;
+                background-color: $primarycolor;
+                transition: width $time;
+            }
+
+            &:hover {
+                color: $primarycolor;
+                font-weight: 700;
+                
+                &:after {                   
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .lang {
+        height: 75%;
+        width: 80px;
+        border-radius: 34px;
+        border: 2px solid $secondarycolor;
+        z-index: 3;
+        transition: border $time;
+        margin: auto 0;
+    
+        &:hover {
+            border-color: $primarycolor;
+        }
+    
+        &-wrap {
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            border: 9px solid $bgcolor;
+            position: relative;
+            border-radius: 34px;
+        }
+    
+        &-checkbox {
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            z-index: 3;
+            margin: 0;
+            padding: 0;
+    
+            &:checked +.label {
+                left: -130px;
+            }
+        }
+    
+        .label {
+            position: absolute;
+            left: 5px;
+            height: 100%;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            color: $primarycolor;
+            font-family: $fontBlack;
+            font-size: 12px;
+            transition: left $time;
+    
+            &-item {
+                text-transform: uppercase;
+            
+                &:first-child {
+                    margin-right: 150px;
+                
+                    &:after {
+                        @extend %before;
+                        height:  100%;
+                        width: 111px;
+                        border-radius: 18px;
+                        background-color: $secondarycolor;
+                        top: 50%;
+                        left: calc(50% - 1px);
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }        
+        }
+    }
+}
+
+.top {
+    &-content {
+        width: 40%;
+    }
+
+    &-man {
+        position: absolute;
+        bottom: 0; 
+        right: 160px;
+    }
+}
+
+.light {
+    background:  linear-gradient(to bottom, rgba($color: $bgcolor, $alpha: .5) 0%,rgba($color: $bgcolor, $alpha: 1.0) 80%);
+}
+
+
+.svg-play {
+    stroke: rgba($color: $primarycolor, $alpha: 1.0);
+    stroke-width: 10;
+    stroke-dasharray: 500 0;
+    fill: $primarycolor;
+}
+  
+ 

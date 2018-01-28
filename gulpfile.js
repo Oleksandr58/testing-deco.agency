@@ -49,18 +49,17 @@ gulp.task('svg-sprite', function (cb) {
 gulp.task('nunjucks', function () {
 	return   gulp.src('assets/templates/index.html')
 			.pipe(nunjucks.compile())
-			.pipe(gulp.dest(''))
+			.pipe(gulp.dest('assets'))
 			.pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('scss', function() {
-	del.sync('style.css');
 	return   gulp.src('assets/scss/style.scss')
 			.pipe(scss().on( 'error', function( error )
 			{console.log( error );} )
 			)
 			.pipe(autoprefixer(['last 4 versions'], {cascade:true}))
-			.pipe(gulp.dest(''))
+			.pipe(gulp.dest('assets'))
 			.pipe(browserSync.reload({stream: true}));
 });
 
@@ -75,7 +74,7 @@ gulp.task('js', function() {
 gulp.task('browser-sync', function(){
 	browserSync({
 		server: {
-			baseDir: 'app'
+			baseDir: 'assets'
 		},
 		notify: false
 	});

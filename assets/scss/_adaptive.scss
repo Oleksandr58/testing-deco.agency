@@ -1,0 +1,27 @@
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 992px) { 
+    .section {
+        &-top {
+            padding-left: 20px;
+
+            .top {
+                &-content {
+                    background: url("img/man.png") no-repeat;
+                    background-size: auto 400px;
+                    background-position: 32% 75%;
+                    background-attachment: fixed;
+                    width: 100%;
+                }
+    
+                &-man {
+                    display: none;
+                }
+            }
+
+            .btn-secondary {
+                display: none;
+            }
+        }
+    }
+}
+     

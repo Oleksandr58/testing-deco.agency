@@ -87,4 +87,14 @@
 	opacity :1;
 }
 
-
+//---------Line under the text---------//
+%line {
+    &::after {
+        content: '';
+        @extend %before;
+        width: 40px;
+        border-bottom: $primarycolor solid 3px;
+		margin: 35px auto;
+		margin-bottom: 30px;
+    }
+}

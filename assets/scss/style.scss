@@ -14,16 +14,13 @@
 @import "base/fonts";		// шрифты
 @import "base/variables";	// переменные
 @import "base/extend";		// расширения
-@import "base/function";	// функции
 @import "base/sprite";		// спрайт
 @import "base/reset";		//
-@import "base/grid";		// сетка
 
 
 //	Style
 @import "btnsIcons";	    // кнопки, иконки
-@import "excerpt";			// post excerpts
-@import "post";				// стили поста
+@import "sections/common";
 @import "sections/home";
 @import "sections/services";
 @import "sections/testimonial";
