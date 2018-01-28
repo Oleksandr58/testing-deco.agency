@@ -54,6 +54,7 @@ gulp.task('nunjucks', function () {
 });
 
 gulp.task('scss', function() {
+	del.sync('style.css');
 	return   gulp.src('assets/scss/style.scss')
 			.pipe(scss().on( 'error', function( error )
 			{console.log( error );} )
@@ -81,7 +82,7 @@ gulp.task('browser-sync', function(){
 });
 
 gulp.task('img', function(){
-	return   gulp.src('asetsp/img/**/*')
+	return   gulp.src('assets/img/**/*')
 			.pipe(imagemin({
 				interlaced: true,
 				progressive: true,
@@ -92,15 +93,15 @@ gulp.task('img', function(){
 });
 
 gulp.task('watch', ['browser-sync', 'nunjucks', 'scss', 'js'], function() {
-	gulp.watch('app/scss/**/*.scss', ['scss']);
-	gulp.watch('app/templates/*.html', ['nunjucks']);
-	gulp.watch('app/js/layout/*.js', ['js']);
+	gulp.watch('assets/scss/**/*.scss', ['scss']);
+	gulp.watch('assets/templates/*.html', ['nunjucks']);
+	gulp.watch('assets/js/include.js', ['js']);
 });
 
-gulp.task('build', ['nunjucks', 'scss', 'img', 'js'], function() {	
-	var buildSvgSprite = gulp.src('app/img/svg/sprite.svg')
-	.pipe(gulp.dest('dist/img/svg'));
-});
+// gulp.task('build', ['nunjucks', 'scss', 'img', 'js'], function() {	
+// 	var buildSvgSprite = gulp.src('app/img/svg/sprite.svg')
+// 	.pipe(gulp.dest('dist/img/svg'));
+// });
 
 
 // Default Task

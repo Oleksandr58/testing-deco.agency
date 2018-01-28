@@ -9,15 +9,6 @@
  * -------------------------------------
  */
 
-
-//	Compass Start
-@import "compass/css3";
-@import "compass";
-@import "compass/layout";
-@import "compass/css3/user-interface";
-
-
-
 // Base Style
 @import "base/mixin";		// миксины
 @import "base/fonts";		// шрифты
@@ -31,13 +22,13 @@
 
 //	Style
 @import "btnsIcons";	    // кнопки, иконки
-@import "some";			    // стили основные-всякие
-@import "header";		    // стили шапки
-@import "footer";		    // стили футера
-@import "sidebar";		    // стили виджетов сайдбара
 @import "excerpt";			// post excerpts
 @import "post";				// стили поста
-@import "section/home";
+@import "sections/home";
+@import "sections/services";
+@import "sections/testimonial";
+@import "sections/request";
+@import "sections/footer";
 
 @import "adaptive";			// стили адаптивки
 
