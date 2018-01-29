@@ -3,6 +3,12 @@
     padding: 50px 65px 65px 125px;
     min-height: 100vh;
     overflow: hidden;
+
+    .paragraph {
+        text-align: left;        
+        margin-top: 35px;
+        max-width: none;
+    }
     
     .btn {
         &-primary {
@@ -11,7 +17,7 @@
 
             &:hover {
                 .svg {
-                    animation: fall 1.5s infinite;
+                    animation: fall 5*$time infinite;
                 }
             }
         }
@@ -21,10 +27,14 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            transition: all 3*$time;
 
             &:hover {
-                .svg-play {
-                    animation: dasharray 2s 2 alternate;                    
+                background-color: $primarycolor;
+
+                .svg-play {                       
+                    stroke-dasharray: 0 500;
+                    fill: $textbtncolor;           
                 }
             }
         }
@@ -198,6 +208,7 @@
     stroke-width: 10;
     stroke-dasharray: 500 0;
     fill: $primarycolor;
+    transition: all 3*$time;
 }
   
  

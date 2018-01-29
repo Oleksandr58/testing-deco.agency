@@ -12,15 +12,34 @@ body {
     font-size: 30px;
     font-weight: bold;
     padding-top: 95px;
-    margin-bottom: 65px;
+    margin-bottom: 30px;
     line-height: 35px;
     width: 300px;
     @extend %line;
+
+    &:after {
+        margin-left: 0;
+        margin-top: 35px;
+        width: 50px;
+    }
 }
 
 .paragraph {
     line-height: 24px;
-    margin-top: 30px;
+    margin: 0 auto;
+    text-align: center;    
+    max-width: 600px;
+}
+
+.sc-title {
+    text-transform: uppercase;
+    text-align: center;    
+    line-height: 35px;    
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-bottom: 15px;
+    @extend %line;
 }
 
 a {
@@ -30,53 +49,6 @@ a {
 
 strong{
     font-weight: bold;
-}
-
-.svg {
-    width: 10px;
-    height: 10px;
-}
-
-.btn {
-    &-primary {
-        background: $primarycolor;
-        border-radius: 34px;
-        font-size: 12px;
-        color: $textbtncolor;
-        text-transform: uppercase;
-        padding: 20px 25px;
-        font-family: $fontMedium;
-
-        svg {              
-            fill: $textbtncolor;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);        
-        }
-    }
-
-    &-secondary {
-        background: $textbtncolor;
-        border-radius: 50%;
-        padding: 35px;
-
-         svg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-40%, -50%); 
-            width: 30px;
-            height: 30px;
-        }
-    }
-}
-
-@keyframes dasharray {
-    100% {
-        stroke-dasharray: 0 500;
-        fill: transparent;   
-    }
 }
 
 @keyframes fall {

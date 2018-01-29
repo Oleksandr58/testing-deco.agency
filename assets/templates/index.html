@@ -2,28 +2,37 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Pravo agency</title>
+    <link rel="shortcut icon" href="img/title.png" type="image/x-icon">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
+	<!-- TOP -->
 	<section class="section section-top" id="home">
 		{% include "_home.html" %}
 	</section>
 
-	<section class="section section-services" id="services">
-		{% include "_services.html" %}
-	</section>
+	<!-- MAIN -->
+	<main>
+		<!-- SERVICES -->
+		<section class="section section-services" id="services">
+			{% include "_services.html" %}
+		</section>
 
-	<section class="section section-testimonial" id="testimonial">
-		{% include "_testimonial.html" %}
-	</section>
+		<!-- TESTIMONIAL -->
+		<section class="section section-testimonial" id="testimonial">
+			{% include "_testimonial.html" %}
+		</section>
 
-	<section class="section section-request" id="request">
-		{% include "_request.html" %}
-	</section>
+		<!-- REQUEST -->
+		<section class="section section-request" id="request">
+			{% include "_request.html" %}
+		</section>
+	</main>
 
+	<!-- FOOTER -->
 	<footer class="section section-footer" id="footer">
 		{% include "_footer.html" %}
 	</footer>
