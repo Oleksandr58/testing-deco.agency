@@ -1,17 +1,18 @@
 .require-form {
-    width: 55%;
+    width: 65%;
     margin: 0 auto;    
-    margin-top: 40px;
+    margin-top: 65px;
     display: flex;
     justify-content: space-between;
 
     .form {
         &-left, &-right {
-            width: 45%;
+            width: 47%;
         }
 
         &-aditional {
             width: 100%;
+            height: 250px;
             padding: 15px;
             font-weight: bold;
         }
@@ -32,7 +33,7 @@
         text-transform: uppercase;
         font-weight: bold;
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
         transition: all $time;
 
         &::placeholder {
@@ -48,6 +49,7 @@
 
     .interest {
         border: 1px solid $servicescolor;
+        margin-top: 28px;
 
         &-header {
             background: $bgcolor;
@@ -55,7 +57,8 @@
             text-transform: uppercase;
             font-size: 11px;
             line-height: 20px;
-            padding: 15px;
+            padding: 17px;
+            padding-left: 25px;
             position: relative;
 
             .wrap-svg {
@@ -80,14 +83,22 @@
         }
     }
 
-    .checkbox{
+    .checkbox {
         display: block;
-        margin: 15px 0;
+        margin: 20px 0;
         cursor: pointer;
         font-size: 13px;
         font-family: $font;
         transition: $time;
         position: relative;
+
+        &:first-child {
+            margin-top: 30px;
+        }
+
+        &:last-child {
+            margin-bottom: 30px;
+        }
     
         &-input {
             visibility: hidden;
@@ -118,14 +129,14 @@
         }
     
         &-content {
-            padding-left: 35px;
+            padding-left: 50px;
     
             &:before {
                 content: '';
                 position: absolute;
                 display: inline-block;
                 top: 50%;
-                left: 15px;
+                left: 22px;
                 transform: translateY(-50%);
                 width: 5px;
                 height: 5px;
@@ -139,8 +150,9 @@
 .section-request {
     .btn {
         &-primary {
-            padding-left: 50px;
-            padding-right: 50px;
+            margin: 10px 0;
+            padding-left: 60px;
+            padding-right: 60px;
         }
 
         &-wrap {

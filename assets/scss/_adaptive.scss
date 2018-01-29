@@ -23,5 +23,18 @@
             }
         }
     }
+
+    .burger {
+        display: flex;
+    }
+    .wrap-nav {
+        .header-nav {
+            display: none;
+        }
+
+        // .lang {
+        //     display: none;
+        // }
+    }    
 }
      

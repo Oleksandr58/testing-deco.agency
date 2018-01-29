@@ -3,6 +3,7 @@
     padding: 50px 65px 65px 125px;
     min-height: 100vh;
     overflow: hidden;
+    position: relative;
 
     .paragraph {
         text-align: left;        
@@ -57,132 +58,132 @@
     height: 50px;
     display: flex;
     justify-content: space-between;
+}
 
-    .header-nav {
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrap-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo {
+    img {
+        width: 100% !important;
+    }
+}
+
+.nav {
+    display: flex;
+    padding: 0 130px;
+    width: 580px;
+    justify-content: space-between;    
+    align-content: center;
+
+    &-item {
+        text-transform: uppercase;
+        font-style: $fontMedium;
+        font-size: 12px;
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 2px;
+            background-color: $primarycolor;
+            transition: width $time;
+        }
+
+        &:hover {
+            color: $primarycolor;
+            font-weight: 700;
+            
+            &:after {                   
+                width: 100%;
+            }
+        }
+    }
+}
+
+.lang {
+    height: 75%;
+    width: 80px;
+    border-radius: 34px;
+    border: 2px solid $secondarycolor;
+    z-index: 3;
+    transition: border $time;
+    margin: auto 0;
+
+    &:hover {
+        border-color: $primarycolor;
+    }
+
+    &-wrap {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        border: 9px solid $bgcolor;
+        position: relative;
+        border-radius: 34px;
+    }
+
+    &-checkbox {
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        z-index: 3;
+        margin: 0;
+        padding: 0;
+
+        &:checked +.label {
+            left: -130px;
+        }
+    }
+
+    .label {
+        position: absolute;
+        left: 5px;
+        height: 100%;
+        z-index: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-
-    .wrap-nav {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .header-logo {
-        img {
-            width: 100% !important;
-        }
-    }
-
-    .nav {
-        display: flex;
-        padding: 0 130px;
-        width: 580px;
-        justify-content: space-between;    
-        align-content: center;
+        box-sizing: border-box;
+        color: $primarycolor;
+        font-family: $fontBlack;
+        font-size: 12px;
+        transition: left $time;
 
         &-item {
             text-transform: uppercase;
-            font-style: $fontMedium;
-            font-size: 12px;
-            cursor: pointer;
-            position: relative;
-
-            &:after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: -10px;
-                width: 0;
-                height: 2px;
-                background-color: $primarycolor;
-                transition: width $time;
-            }
-
-            &:hover {
-                color: $primarycolor;
-                font-weight: 700;
-                
-                &:after {                   
-                    width: 100%;
-                }
-            }
-        }
-    }
-
-    .lang {
-        height: 75%;
-        width: 80px;
-        border-radius: 34px;
-        border: 2px solid $secondarycolor;
-        z-index: 3;
-        transition: border $time;
-        margin: auto 0;
-    
-        &:hover {
-            border-color: $primarycolor;
-        }
-    
-        &-wrap {
-            overflow: hidden;
-            height: 100%;
-            width: 100%;
-            border: 9px solid $bgcolor;
-            position: relative;
-            border-radius: 34px;
-        }
-    
-        &-checkbox {
-            cursor: pointer;
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            z-index: 3;
-            margin: 0;
-            padding: 0;
-    
-            &:checked +.label {
-                left: -130px;
-            }
-        }
-    
-        .label {
-            position: absolute;
-            left: 5px;
-            height: 100%;
-            z-index: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-sizing: border-box;
-            color: $primarycolor;
-            font-family: $fontBlack;
-            font-size: 12px;
-            transition: left $time;
-    
-            &-item {
-                text-transform: uppercase;
+        
+            &:first-child {
+                margin-right: 150px;
             
-                &:first-child {
-                    margin-right: 150px;
-                
-                    &:after {
-                        @extend %before;
-                        height:  100%;
-                        width: 111px;
-                        border-radius: 18px;
-                        background-color: $secondarycolor;
-                        top: 50%;
-                        left: calc(50% - 1px);
-                        transform: translate(-50%, -50%);
-                    }
+                &:after {
+                    @extend %before;
+                    height:  100%;
+                    width: 111px;
+                    border-radius: 18px;
+                    background-color: $secondarycolor;
+                    top: 50%;
+                    left: calc(50% - 1px);
+                    transform: translate(-50%, -50%);
                 }
-            }        
-        }
+            }
+        }        
     }
 }
 
@@ -211,4 +212,110 @@
     transition: all 3*$time;
 }
   
- 
+ .nav-mobile {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100vh;
+     transform: translateY(-150%);
+     background: $primarycolor;
+     z-index: 3;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-content: space-around;
+     transition: all $time;
+
+     .header-nav {
+         height: 100%;
+         width: 100%;
+     }
+
+     .nav {
+         flex-direction: column;
+         justify-content: space-around;
+         margin-top: 100px;
+         height:100%;
+         width: 100%;
+
+         &-item {
+            text-align: center;
+            font-size: 20px;
+            color: $textbtncolor;
+
+            &:after {
+                background-color: $textbtncolor;
+            }
+        }
+     }
+
+     .close {
+         position: absolute;
+         width: 30px;
+         height: 40px;
+         top: 50px;
+         right: 100px;
+         z-index: 4;
+
+         &:before {
+             content: '';
+             position: absolute;
+             top: 15px;
+             height: 2px;
+             width: 30px;
+             transform: rotate(45deg);
+             background-color: white;
+         }
+
+         &:after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            height: 2px;
+            width: 30px;
+            transform: rotate(-45deg);
+            background-color: white;
+        }
+     }
+
+     .logo-mobile {
+         position: absolute;
+         top: 50px;
+         left: 50px;
+     }
+ }
+
+ .open-mobile {
+     transform: translateY(0);
+ }
+
+ .burger {
+     margin-top: 10px;
+     margin-right: 30px;
+     height: 30px;
+     width: 30px;
+     display: none;
+     justify-content: space-around;
+     align-content: flex-start;
+     flex-direction: column;
+
+     &-item {
+         width: 100%;
+         height: 3px;
+         background-color: $primarycolor;
+
+         &:nth-child(2) {
+             width: 20px;
+             transform: translateX(5px);
+             transition: all $time;
+         }
+     }
+
+     &:hover {
+         .burger-item:nth-child(2) {             
+            width: 100%;
+            transform: translateX(0);
+         }
+     }
+ }
