@@ -2,6 +2,8 @@ body {
     font-style: $font;
     color: $textcolor;
     font-size: 15px;
+    padding: 0;
+    margin: 0;
 }
 
 .section {
@@ -58,4 +60,18 @@ strong{
     52% { top: -150%; left: -200%; }
     53% { left: 50%; top: -150% }
     100%{ top: 50%; }
+}
+
+@keyframes rotate {
+    0%  { transform: translate(-150%, -50%) rotate(0deg); }
+    100%{ transform: translate(-150%, -50%) rotate(-180deg);}
+}
+
+@keyframes changeicon {
+    0%  { top: 50%; }
+    50% { top: 150%; left: 50%; }
+    51% { left: -200%;}
+    52% { top: -150%; left: -200%;}
+    53% { left: 50%; top: -150%; fill: $servicescolor;}
+    100%{ top: 50%; fill: $footercolor;}
 }

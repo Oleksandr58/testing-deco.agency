@@ -1,1 +1,47 @@
+<h2 class="sc-title">запрос на услуги</h2>
 
+<form action="URL" method="post" class="require-form" id="require-form">
+    <div class="form-left">
+        <input type="text" placeholder="ИМЯ*" form="require-form" name="name" required>
+        <input type="text" pattern="^[ 0-9]+$" placeholder="ТЕЛЕФОН*" 
+        form="require-form" name="phone" required>
+        <input type="email" placeholder="E-MAIL*" form="require-form" name="email" required>
+        <input type="text" placeholder="САЙТ" form="require-form" name="website">
+        <div class="interest">
+            <div class="interest-header">
+                    <span class="interest-header--text">Меня интересует</span>
+                    <div class="wrap-svg">
+                        <svg class="svg">
+                            <use xlink:href="./img/svgSprite.svg#arrow"></use>
+                        </svg>   
+                    </div> 
+                </div>
+                <div class="interest-content">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox-input" name="info-0">
+                        <span class="checkbox-content">Наведение порядка в делах</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox-input" name="info-1">
+                        <span class="checkbox-content">Правовое сопровождение деятельности</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox-input" name="info-2">
+                        <span class="checkbox-content">Оптимизация договорных отношений</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox-input" name="info-3">
+                        <span class="checkbox-content">Разработка договоров</span>
+                    </label>
+                </div>
+        </div>
+    </div>
+    <div class="form-right">
+        <label class="aditional-label" for="form-aditional">дополнительная информация</label>
+        <textarea name="form-aditional" id="form-aditional" class="form-aditional" cols="30" rows="10"
+        placeholder="Введите текст ..."></textarea>
+    </div>
+</form>
+<div class="btn-wrap">
+    <button type="submit" class="btn btn-primary">отправить</button>
+</div>

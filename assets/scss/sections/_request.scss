@@ -1,0 +1,153 @@
+.require-form {
+    width: 55%;
+    margin: 0 auto;    
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    .form {
+        &-left, &-right {
+            width: 45%;
+        }
+
+        &-aditional {
+            width: 100%;
+            padding: 15px;
+            font-weight: bold;
+        }
+    }
+
+    .aditional-label {
+        text-transform: uppercase;
+        font-style: $fontMedium;
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    input {
+        border: none;
+        border-bottom: 1px solid $servicescolor;
+        font-size: 11px;
+        line-height: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 100%;
+        margin-bottom: 25px;
+        transition: all $time;
+
+        &::placeholder {
+            color: $textcolor;
+            font-weight: normal;
+        }
+
+        &:focus {
+            border-color: $primarycolor;
+            background-color: rgba($color: $primarycolor, $alpha: .1);
+        }
+    }
+
+    .interest {
+        border: 1px solid $servicescolor;
+
+        &-header {
+            background: $bgcolor;
+            border-bottom: 1px solid $servicescolor;
+            text-transform: uppercase;
+            font-size: 11px;
+            line-height: 20px;
+            padding: 15px;
+            position: relative;
+
+            .wrap-svg {
+                height: 30px;
+                width: 30px;        
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);        
+                border: $servicescolor solid 2px;
+                border-radius: 50%;   
+                overflow: hidden;
+
+                .svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    fill: $servicescolor;
+                }
+            }
+        }
+    }
+
+    .checkbox{
+        display: block;
+        margin: 15px 0;
+        cursor: pointer;
+        font-size: 13px;
+        font-family: $font;
+        transition: $time;
+        position: relative;
+    
+        &-input {
+            visibility: hidden;
+            position: absolute;
+    
+            &:checked + .checkbox-content {
+                color: $primarycolor;
+                font-family: $fontBold;
+                
+                &:before{
+                    border-color: $primarycolor;
+                    background-color: $primarycolor;
+                }
+            }
+        }
+    
+        &:hover {
+    
+            .checkbox-content {
+                color: $primarycolor;
+                font-family: $fontBold;
+                font-weight: bold;
+    
+                &:before{
+                    border-color: $primarycolor;
+                }
+            }
+        }
+    
+        &-content {
+            padding-left: 35px;
+    
+            &:before {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                top: 50%;
+                left: 15px;
+                transform: translateY(-50%);
+                width: 5px;
+                height: 5px;
+                border: 2px solid $servicescolor;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.section-request {
+    .btn {
+        &-primary {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        &-wrap {
+            text-align: center;
+            padding: 35px 0 30px 0;
+            border-bottom: 1px solid $secondarycolor;
+            margin-bottom: 200px;
+        }
+    }
+}

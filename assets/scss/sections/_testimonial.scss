@@ -16,7 +16,7 @@
             }
 
             .quote-photo {
-                transform: skew(-15deg);
+                box-shadow: 0 0 0 2px $primarycolor;
             }
         }
     }
@@ -38,7 +38,7 @@
         margin-top: 40px;
         border-radius: 50%;
         cursor: pointer;
-        transition: all $time;
+        transition: box-shadow $time;
     }
 
     .author {
@@ -114,7 +114,7 @@
     font-style: $fontBlack;
     font-weight: bold;
     position: relative;
-    border-bottom: 1px solid $servicescolor;
+    border-bottom: 1px solid $secondarycolor;
     margin-bottom: 100px;
 
     .svg {
@@ -130,6 +130,7 @@
 
     &-wrap:hover {
         .svg {
+            animation: rotate $time infinite;
             transform: translate(-150%, -50%) rotate(180deg);
         }
 

@@ -1,0 +1,61 @@
+.agency {
+    text-align: center;
+
+    &-network {
+        .svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            fill: $servicescolor;
+            transition: fill $time;
+        }
+
+        .network-link {       
+            display: inline-block;
+            padding: 22px;
+            border: solid 2px $servicescolor;
+            border-radius: 50%;
+            margin: 30px 5px;
+            cursor: pointer;
+            transition: all $time;
+            overflow: hidden;
+            position: relative;
+
+            &:hover {
+                border-color: $footercolor;
+
+                .svg {
+                    animation: changeicon $time 1;
+                    fill: $footercolor;
+                }
+            }
+        }
+    }
+
+    &-address, &-phone, &-email {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    &-email {
+        color: $primarycolor;
+        text-decoration: underline;
+    }
+}
+
+.footer {
+    &-caption {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        font-size: 11px;
+    }
+}
+
+.section-footer {
+    margin-top: -150px;
+    margin-bottom: 30px;
+}
