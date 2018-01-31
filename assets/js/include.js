@@ -1,18 +1,18 @@
- // VARIABLES //
-
- var mobileMenu = $('.js_mobile-menu'),
- mobileContent = $('.js_mobile-content'),
- mobileItems = $('.js_mobile-content .nav-item'),
- closeMobileMenu = $('.js_close-mobile'),
- nav = $('.js_nav'),
- services = $('.services-item'),
- servicesitem = $('.item-wrap'),
- modal = $('.modal'),
- accordeonHeader = $('.js_accordeon .interest-header'),
- accordeonContent = $('.js_accordeon .interest-content'),
- animationTime = 1000;
-
 jQuery(document).ready(function($){
+
+     // VARIABLES //
+
+    var mobileMenu = $('.js_mobile-menu'),
+    mobileContent = $('.js_mobile-content'),
+    mobileItems = $('.js_mobile-content .nav-item'),
+    closeMobileMenu = $('.js_close-mobile'),
+    nav = $('.js_nav'),
+    services = $('.services-item'),
+    servicesitem = $('.item-wrap'),
+    modal = $('.modal'),
+    accordeonHeader = $('.js_accordeon .interest-header'),
+    accordeonContent = $('.js_accordeon .interest-content'),
+    animationTime = 1000;
 
     // MOBILE MENU //
 
@@ -61,16 +61,18 @@ jQuery(document).ready(function($){
         accordeonContent.slideToggle(animationTime);
         accordeonHeader.toggleClass('interest-close');
     });
+
+    // FUNCTION //
+    
+    function OffScroll () {
+        var winScrollTop = $(window).scrollTop();
+    
+        $(window).bind('scroll',function () {
+            $(window).scrollTop(winScrollTop);
+        });
+    }
+    
+    function toggleMobileMenu() {
+        mobileContent.toggleClass('open-mobile');
+    }
 });
-
-function OffScroll () {
-    var winScrollTop = $(window).scrollTop();
-
-    $(window).bind('scroll',function () {
-        $(window).scrollTop(winScrollTop);
-    });
-}
-
-function toggleMobileMenu() {
-    mobileContent.toggleClass('open-mobile');
-}
