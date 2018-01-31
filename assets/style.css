@@ -1196,7 +1196,7 @@ strong {
     border-top: solid 1px #a70c5d;
     border-right: solid 1px #a70c5d; }
   .section-services .modal {
-    display: block;
+    display: none;
     position: static;
     width: 100%;
     padding: 30px 15px;
