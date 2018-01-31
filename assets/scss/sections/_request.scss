@@ -11,7 +11,7 @@
         }
 
         &-aditional {
-            width: 100%;
+            width: calc(100% - 30px);
             height: 250px;
             padding: 15px;
             font-weight: bold;
@@ -51,6 +51,12 @@
         border: 1px solid $servicescolor;
         margin-top: 28px;
 
+        &-close {
+            .svg {
+                transform: translate(-50%, -50%) rotate(0) !important;                      
+            }
+        }
+
         &-header {
             background: $bgcolor;
             border-bottom: 1px solid $servicescolor;
@@ -60,6 +66,10 @@
             padding: 17px;
             padding-left: 25px;
             position: relative;
+
+            &:hover {
+                background: rgba($color: $primarycolor, $alpha: .05);
+            }
 
             .wrap-svg {
                 height: 30px;
@@ -76,8 +86,9 @@
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%) rotate(180deg);
                     fill: $servicescolor;
+                    transition: transform $time;
                 }
             }
         }

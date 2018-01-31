@@ -1,25 +1,37 @@
+ // VARIABLES //
+
+ var mobileMenu = $('.js_mobile-menu'),
+ mobileContent = $('.js_mobile-content'),
+ mobileItems = $('.js_mobile-content .nav-item'),
+ closeMobileMenu = $('.js_close-mobile'),
+ nav = $('.js_nav'),
+ services = $('.services-item'),
+ servicesitem = $('.item-wrap'),
+ modal = $('.modal'),
+ accordeonHeader = $('.js_accordeon .interest-header'),
+ accordeonContent = $('.js_accordeon .interest-content'),
+ animationTime = 1000;
 
 jQuery(document).ready(function($){
-    var mobileMenu = $('.js_mobile-menu'),
-        mobileContent = $('.js_mobile-content'),
-        mobileItems = $('.js_mobile-content .nav-item'),
-        closeMobileMenu = $('.js_close-mobile'),
-        nav = $('.js_nav');
+
+    // MOBILE MENU //
 
     mobileMenu.on('click', function() {
-        toggleMobileMenu()
+        toggleMobileMenu();
         OffScroll();
     });
 
     closeMobileMenu.on('click', function() {
-        toggleMobileMenu()
+        toggleMobileMenu();
         $(window).unbind('scroll');
     });
 
     mobileItems.on('click', function() {
-        toggleMobileMenu()
+        toggleMobileMenu();
         $(window).unbind('scroll');
     });
+
+    // FLEXIBLE NAVIGATION SCROLL //
 
     nav.on("click","a", function (event) {
         event.preventDefault();
@@ -29,15 +41,36 @@ jQuery(document).ready(function($){
         $('body,html').animate({scrollTop: top}, delay);
     });
     
-    function OffScroll () {
-        var winScrollTop = $(window).scrollTop();
-    
-        $(window).bind('scroll',function () {
-            $(window).scrollTop(winScrollTop);
-        });
-    }
+    // MODAL IN SERVICES //
 
-    function toggleMobileMenu() {
-        mobileContent.toggleClass('open-mobile');
-    }
+    services.on('click', function() {
+        if ( $(this).find(servicesitem).hasClass('open-item') ) {
+            services.find(servicesitem).removeClass('open-item');
+            $(this).next().slideToggle(animationTime);
+            return;
+        }
+        services.find(servicesitem).removeClass('open-item');
+        modal.slideUp(animationTime);
+        $(this).find(servicesitem).addClass('open-item');
+        $(this).next().slideToggle(animationTime);
+    });
+
+    // ACCORDEON INTEREST IN REQUEST //
+
+    accordeonHeader.on('click', function() {
+        accordeonContent.slideToggle(animationTime);
+        accordeonHeader.toggleClass('interest-close');
+    });
 });
+
+function OffScroll () {
+    var winScrollTop = $(window).scrollTop();
+
+    $(window).bind('scroll',function () {
+        $(window).scrollTop(winScrollTop);
+    });
+}
+
+function toggleMobileMenu() {
+    mobileContent.toggleClass('open-mobile');
+}

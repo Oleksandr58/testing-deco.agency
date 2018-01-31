@@ -11,6 +11,16 @@
                     background-position: 32% 75%;
                     background-attachment: fixed;
                     width: 100%;
+                    text-align: center !important;
+                    
+                    .title, .paragraph {
+                        text-align: center !important;
+                        width: 100%;
+                    }
+                    
+                    .title::after {
+                        margin: 13px auto;
+                    }
                 }
     
                 &-man {
@@ -31,10 +41,100 @@
         .header-nav {
             display: none;
         }
-
-        // .lang {
-        //     display: none;
-        // }
     }    
+
+    .section-services {
+        .item-wrap {
+            margin-left: 100px;
+            width: 100%;
+        }
+
+        .services {
+            &-item {
+                width: 100%;
+                border-bottom: 2px dotted $bgcolor;   
+
+                .item-wrap {
+                    width: calc(100% - 100px);
+                }
+            }
+        }
+
+        .open-item {
+            &::before {
+                width: calc(100% + 100px);
+                height: 2px;
+                top: calc(100% + 35px);
+                left: -100px;
+            }
+
+            &::after {
+                height: 10px;
+                width: 10px;
+                top: calc(100% + 36px);                
+                left: calc(50% - 50px);
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+
+            &[data-position="right"] {
+                &::before {            
+                    left: -100px;        
+                }
+
+                &::after {
+                    left: calc(50% - 50px);
+                }
+            }
+    
+            &[data-position="left"] {
+                &::before {            
+                    left: -100px;              
+                }
+    
+                &::after {
+                    top: calc(100% + 36px); 
+                    left: calc(50% - 50px);
+                    border: none;
+                    border-top: solid 1px $primarycolor;
+                    border-right: solid 1px $primarycolor;
+                }
+            }
+        }
+
+        .modal {
+            display: block;
+            position: static;
+            width: 100%;
+            padding: 30px 15px;
+            box-shadow: inset 0 0 30px $primarycolor;
+        }
+    }
+
+    .section-testimonial {
+        .quote{
+            &-wrap {
+                display: block;
+            }
+
+            &-item {
+                width: 100%;
+                margin-top: 50px;
+            }
+        }
+    }
+
+    .section-request {
+        .require-form {
+            width: 100%;
+            display: block;
+            padding: 15px;
+
+            .form {
+                &-right, &-left {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
      
